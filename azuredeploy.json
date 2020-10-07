@@ -6,7 +6,7 @@
     "baseResourceName": {
       "type": "string",
       "minLength": 1,
-      "defaultValue" : "petrobras-teams-apps-multiQnA",
+      "defaultValue" : "petrobras-teams-apps-multiqna",
       "metadata": {
         "description": "The base name to use for the resources that will be provisioned."
       }
@@ -33,7 +33,7 @@
     "appDisplayName": {
       "type": "string",
       "minLength": 1,
-      "defaultValue": "PetroBot",
+      "defaultValue": "petrobras-teams-apps-multiqna",
       "metadata": {
         "description": "The app (and bot) display name."
       }
@@ -91,7 +91,7 @@
     },
     
     "qnaMakerTAR": {
-      "defaultValue": "petro-qna-tar",
+      "defaultValue": "petrobras-teams-apps-multiqna-tar",
       "type": "string",
       "metadata": {
         "description": "QnAMaker service name for TAR."
@@ -99,7 +99,7 @@
     },
 
     "qnaMakerMain": {
-      "defaultValue": "petro-qna-main",
+      "defaultValue": "petrobras-teams-apps-multiqna-main",
       "type": "string",
       "metadata": {
         "description": "QnAMaker service name for Main."
