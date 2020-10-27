@@ -105,20 +105,6 @@
             "metadata": {
                 "description": "Location for all resources."
             }
-        },
-        "gitRepoUrl": {
-            "defaultValue": "https://github.com/OfficeDev/microsoft-teams-company-communicator-app.git",
-            "type": "String",
-            "metadata": {
-                "description": "The URL to the GitHub repository to deploy."
-            }
-        },
-        "gitBranch": {
-            "defaultValue": "master",
-            "type": "String",
-            "metadata": {
-                "description": "The branch of the GitHub repository to deploy."
-            }
         }
     },
     "variables": {
@@ -283,23 +269,7 @@
                         ]
                     }
                 }
-            },
-            "resources": [
-                {
-                    "type": "sourcecontrols",
-                    "apiVersion": "2016-08-01",
-                    "name": "web",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Web/sites', variables('botAppName'))]"
-                    ],
-                    "properties": {
-                        "RepoUrl": "[parameters('gitRepoUrl')]",
-                        "branch": "[parameters('gitBranch')]",
-                        "IsManualIntegration": true
-                    },
-                    "condition": "[not(empty(parameters('gitRepoUrl')))]"
-                }
-            ]
+            }
         },
         {
             "type": "Microsoft.Insights/components",
@@ -530,23 +500,7 @@
                         }
                     ]
                 }
-            },
-            "resources": [
-                {
-                    "type": "sourcecontrols",
-                    "apiVersion": "2015-08-01",
-                    "name": "web",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Web/sites', variables('prepFunctionAppName'))]"
-                    ],
-                    "properties": {
-                        "RepoUrl": "[parameters('gitRepoUrl')]",
-                        "branch": "[parameters('gitBranch')]",
-                        "IsManualIntegration": true
-                    },
-                    "condition": "[not(empty(parameters('gitRepoUrl')))]"
-                }
-            ]
+            }
         },
         {
             "type": "Microsoft.Web/sites",
@@ -625,23 +579,7 @@
                         }
                     ]
                 }
-            },
-            "resources": [
-                {
-                    "type": "sourcecontrols",
-                    "apiVersion": "2015-08-01",
-                    "name": "web",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Web/sites', variables('sendFunctionAppName'))]"
-                    ],
-                    "properties": {
-                        "RepoUrl": "[parameters('gitRepoUrl')]",
-                        "branch": "[parameters('gitBranch')]",
-                        "IsManualIntegration": true
-                    },
-                    "condition": "[not(empty(parameters('gitRepoUrl')))]"
-                }
-            ]
+            }
         },
         {
             "type": "Microsoft.Web/sites",
@@ -724,23 +662,7 @@
                         }
                     ]
                 }
-            },
-            "resources": [
-                {
-                    "type": "sourcecontrols",
-                    "apiVersion": "2015-08-01",
-                    "name": "web",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Web/sites', variables('dataFunctionAppName'))]"
-                    ],
-                    "properties": {
-                        "RepoUrl": "[parameters('gitRepoUrl')]",
-                        "branch": "[parameters('gitBranch')]",
-                        "IsManualIntegration": true
-                    },
-                    "condition": "[not(empty(parameters('gitRepoUrl')))]"
-                }
-            ]
+            }
         },
         {
             "type": "Microsoft.Network/frontDoors",
